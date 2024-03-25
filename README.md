@@ -7,3 +7,7 @@ upscaling is needed
 
 # Html Part
 receive drawn image by canvas
+
+# References
+https://wikidocs.net/63618
+https://m.blog.naver.com/jochanyang/221367116122
