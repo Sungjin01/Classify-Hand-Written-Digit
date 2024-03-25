@@ -1,5 +1,5 @@
-# Classify-Hand-Written-Number
-Classify hand-written number by CNN drawn from html page
+# Classify-Hand-Written-Digit
+Classify hand-written digit by CNN drawn from html page
 
 # Model Part
 train CNN model using mnist dataset<br>
