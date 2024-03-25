@@ -9,5 +9,5 @@ upscaling is needed
 receive drawn image by canvas
 
 # References
-https://wikidocs.net/63618
+https://wikidocs.net/63618<br>
 https://m.blog.naver.com/jochanyang/221367116122
