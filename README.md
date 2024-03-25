@@ -9,5 +9,7 @@ upscaling is needed
 receive drawn image by canvas
 
 # References
-https://wikidocs.net/63618<br>
+CNN으로 MNIST 분류하기<br>
+https://wikidocs.net/63565<br>
+핸드폰(모바일)에서 고객 서명(사인) 받기, html canvas 사용<br>
 https://m.blog.naver.com/jochanyang/221367116122
