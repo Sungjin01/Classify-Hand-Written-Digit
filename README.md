@@ -8,6 +8,13 @@ upscaling is needed
 # Html Part
 receive drawn image by canvas
 
+# Required
+Install Python
+https://www.anaconda.com/download
+Install PyTorch
+https://pytorch.org/get-started/locally/
+
+
 # References
 CNN으로 MNIST 분류하기<br>
 https://wikidocs.net/63565<br>
