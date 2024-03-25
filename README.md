@@ -9,9 +9,9 @@ upscaling is needed
 receive drawn image by canvas
 
 # Required
-Install Python
-https://www.anaconda.com/download
-Install PyTorch
+Install Python<br>
+https://www.anaconda.com/download<br>
+Install PyTorch<br>
 https://pytorch.org/get-started/locally/
 
 
