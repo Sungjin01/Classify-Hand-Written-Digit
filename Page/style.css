@@ -1,0 +1,83 @@
+body {
+    margin: 2.5vh 2.5vw;
+    font-family: math;
+    font-size:1.5vmin;
+}
+
+.resetButtonDiv{
+    height:5vh;
+}
+
+#resetButton{
+    height:5vh;
+    width:10vw;
+    font-size:1.5em;
+    color: white;
+    border: 1px solid rgb(40 62 255);
+    background: rgb(40 62 255);
+    border-radius: 1vmin;
+}
+
+.digitCanvasLineDiv{
+    display:flex;
+    align-items: center;
+    height:24vh;
+}
+
+.digitCanvasDiv{
+    height:20vmin;
+    width:20vmin;
+    padding:2vmin;
+    display:block;
+}
+
+.digitCanvas{
+    height:15vmin;
+    width:15vmin;
+    border: 1px solid rgb(40 62 255);
+}
+
+.clearCanvasButton{
+    height:5vmin;
+    width:10vmin;
+    font-size:1.5em;
+    color: white;
+    border: 1px solid rgb(40 62 255);
+    background: rgb(40 62 255);
+    border-radius: 1vmin;
+}
+
+.digitResultLineDiv{
+    height:10vh;
+}
+
+.resultPrintDiv{
+    height:20vh;
+    display: flex;
+    align-items: center;
+}
+
+#resultSpan{
+    font-size:7em;
+    font-style: italic;
+}
+
+.addDigitCanvasButton{
+    height:12vmin;
+    width:12vmin;
+    margin:6vmin;
+    font-size:5em;
+    font-family: math;
+    color: white;
+    border: 1px solid rgb(40 62 255);
+    background: rgb(40 62 255);
+    border-radius: 2vmin;
+}
+
+.red{
+    border: 1px solid red;
+}
+
+.blue{
+    border: 1px solid blue;
+}
