@@ -1,11 +1,41 @@
 from tkinter import *
-from PIL import Image
+from tkinter import filedialog
+from tkinter import messagebox
+import PIL.ImageGrab as ImageGrab
 import torch
 import torchvision
 import torchvision.transforms as transforms
 
 mycolor = "black"
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
+#Model Define
+class CNN(torch.nn.Module):
+
+    def __init__(self):
+        super(CNN, self).__init__()
+        
+        self.layer1 = torch.nn.Sequential(
+            torch.nn.Conv2d(1, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)),
+            torch.nn.ReLU(),
+            torch.nn.MaxPool2d(2))
+        
+        self.layer2 = torch.nn.Sequential(
+            torch.nn.Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1)),
+            torch.nn.ReLU(),
+            torch.nn.MaxPool2d(2))
+        
+        self.fc = torch.nn.Linear(7*7*64, 10, bias=True)
+        #이게 뭔지 찾기
+        torch.nn.init.xavier_uniform_(self.fc.weight)
+
+    def forward(self, x):
+        out = self.layer1(x)
+        out = self.layer2(out)
+        #flatten
+        out = out.view(out.size(0), -1)
+        out = self.fc(out)
+        return out
 
 def paint(event):
     x1, y1 = ( event.x-1 ), ( event.y-1 )
@@ -18,9 +48,10 @@ def classify_digit():
     model = torch.load('model/model.pt')
     model.eval()
 
-    image_path = 'test_image/24.png'
+    image_path = './digit.png'
     img = torchvision.io.read_image(image_path, torchvision.io.ImageReadMode.GRAY)
     img = transforms.Resize(size=(28, 28))(img)
+    img.show()
     img = img.view(1, 1, 28, 28).float().to(device)
 
     with torch.no_grad():
@@ -28,14 +59,14 @@ def classify_digit():
         print(torch.argmax(prediction, 1).item())
 
 def save_as_png(canvas,fileName):
-    # save postscipt image 
-    canvas.postscript(file = fileName + '.eps') 
-    # use PIL to convert to PNG 
-    img = Image.open(fileName + '.eps') 
-    img.save(fileName + '.png', 'png') 
+    location = './digit.png'
+    x = window.winfo_rootx()
+    y = window.winfo_rooty()
+    img = ImageGrab.grab(bbox=(x, y, x+350, y+250))
+    img.save(location)
 
-window = Tk();
-canvas = Canvas(window);
+window = Tk()
+canvas = Canvas(window)
 canvas.pack()
 canvas.bind("<B1-Motion>", paint)
 button = Button(window, text="CLASSIFY",command=classify_digit)
