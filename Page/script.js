@@ -2,7 +2,6 @@ let drawing = false;
 
 window.onload = function() {
     //let spawn = require('child_process').spawn;
-    
 
     document.getElementById('resetButton').addEventListener('click', onResetButtonClick);
     document.getElementById('addDigitCanvasButton1').addEventListener('click', onAddDigitCanvasButtonClick);
@@ -14,6 +13,7 @@ window.onload = function() {
 function onResetButtonClick(){
 
 }
+
 
 function onAddDigitCanvasButtonClick(e){
     const digitCanvasDiv = document.createElement('div');

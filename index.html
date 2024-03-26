@@ -5,23 +5,34 @@
     <title>Classify Hand Written Digit</title>
     <script src="Page/script.js"></script>
     <link rel="stylesheet" href="Page/style.css" />
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
 </head>
 <body>
     <div class="resetButtonDiv red">
         <button id="resetButton">RESET</button>
     </div>
     <div class="digitCanvasLineDiv red">
-        <Button id="addDigitCanvasButton" class="addDigitCanvasButton">+</Button>
+        <div class="digitCanvasDiv">
+            <canvas class="digitCanvas"></canvas>
+        </div>
+        <div class="digitCanvasDiv">
+            <canvas class="digitCanvas"></canvas>
+        </div>
+        <div class="digitCanvasDiv">
+            <canvas class="digitCanvas"></canvas>
+        </div>
+        <div class="digitCanvasDiv">
+            <canvas class="digitCanvas"></canvas>
+        </div>
+        <div class="digitCanvasDiv">
+            <canvas class="digitCanvas"></canvas>
+        </div>
     </div>
+    <Button py-click="classify_digit">CLASSIFY</Button>
     <div class="digitResultLineDiv red">
-
+        <span id="digitResultSpan"></span>
     </div>
-    <div class="digitCanvasLineDiv red">
-
-    </div>
-    <div class="digitResultLineDiv red">
-
-    </div>
-
+    <script type="py" src="./Train/predictor.py" config="./Page/pyscript.json"></script>
 </body>
 </html>

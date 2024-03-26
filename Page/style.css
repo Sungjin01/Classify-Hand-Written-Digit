@@ -8,7 +8,7 @@ body {
     height:5vh;
 }
 
-#resetButton{
+button{
     height:5vh;
     width:10vw;
     font-size:1.5em;
@@ -32,46 +32,18 @@ body {
 }
 
 .digitCanvas{
-    height:15vmin;
-    width:15vmin;
+    height:20vmin;
+    width:20vmin;
     border: 1px solid rgb(40 62 255);
-}
-
-.clearCanvasButton{
-    height:5vmin;
-    width:10vmin;
-    font-size:1.5em;
-    color: white;
-    border: 1px solid rgb(40 62 255);
-    background: rgb(40 62 255);
-    border-radius: 1vmin;
 }
 
 .digitResultLineDiv{
     height:10vh;
 }
 
-.resultPrintDiv{
-    height:20vh;
-    display: flex;
-    align-items: center;
-}
-
-#resultSpan{
+#digitResultSpan{
     font-size:7em;
     font-style: italic;
-}
-
-.addDigitCanvasButton{
-    height:12vmin;
-    width:12vmin;
-    margin:6vmin;
-    font-size:5em;
-    font-family: math;
-    color: white;
-    border: 1px solid rgb(40 62 255);
-    background: rgb(40 62 255);
-    border-radius: 2vmin;
 }
 
 .red{
