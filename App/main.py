@@ -5,6 +5,7 @@ import PIL.ImageGrab as ImageGrab
 import torch
 import torchvision
 import torchvision.transforms as transforms
+import numpy as np
 
 mycolor = "black"
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -40,7 +41,7 @@ class CNN(torch.nn.Module):
 def paint(event):
     x1, y1 = ( event.x-1 ), ( event.y-1 )
     x2, y2 = ( event.x+1 ), ( event.y+1 )
-    canvas.create_oval(x1, y1, x2, y2, fill=mycolor, outline=mycolor)
+    canvas.create_oval(x1, y1, x2, y2, fill=mycolor, outline=mycolor, width=4)
 
 def classify_digit():
     save_as_png(canvas, 'digit')
@@ -51,12 +52,14 @@ def classify_digit():
     image_path = './digit.png'
     img = torchvision.io.read_image(image_path, torchvision.io.ImageReadMode.GRAY)
     img = transforms.Resize(size=(28, 28))(img)
-    img.show()
+    img = np.invert(img)
     img = img.view(1, 1, 28, 28).float().to(device)
+    
 
     with torch.no_grad():
         prediction = model(img)
-        print(torch.argmax(prediction, 1).item())
+        messagebox.showinfo("CLASSIFY", torch.argmax(prediction, 1).item())
+        #print(torch.argmax(prediction, 1).item())
 
 def save_as_png(canvas,fileName):
     location = './digit.png'
@@ -65,10 +68,15 @@ def save_as_png(canvas,fileName):
     img = ImageGrab.grab(bbox=(x, y, x+350, y+250))
     img.save(location)
 
+def clear():
+    canvas.delete("all")
+
 window = Tk()
 canvas = Canvas(window)
 canvas.pack()
 canvas.bind("<B1-Motion>", paint)
-button = Button(window, text="CLASSIFY",command=classify_digit)
-button.pack()
+button1 = Button(window, text="CLASSIFY",command=classify_digit)
+button2 = Button(window, text="CLEAR", command=clear)
+button1.pack()
+button2.pack()
 window.mainloop()
