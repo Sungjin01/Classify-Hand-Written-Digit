@@ -14,7 +14,11 @@ https://www.anaconda.com/download<br>
 Install PyTorch<br>
 https://pytorch.org/get-started/locally/
 
-![image](https://github.com/Sungjin01/Classify-Hand-Written-Digit/assets/43747041/84c0a506-b415-4c77-8c00-7a0123ea2fdb)
+![image](https://github.com/Sungjin01/Classify-Hand-Written-Digit/assets/43747041/28f87e2d-2d5b-4c56-8f91-e9f506fa1cac)
+![image](https://github.com/Sungjin01/Classify-Hand-Written-Digit/assets/43747041/e1faba75-df49-4609-b4cb-3a9bbf7e5f16)
+![image](https://github.com/Sungjin01/Classify-Hand-Written-Digit/assets/43747041/a0fc0f15-1589-46e9-b618-4737634444ea)
+
+
 
 # References
 CNN으로 MNIST 분류하기<br>
